@@ -1,4 +1,4 @@
-<div class="about" id="about">
+<section class="about" id="about">
     <div class="section-header">
         <h3 class="intro">My name is</h3>
         <h1 class="name">Robert Sheffield</h1>
@@ -6,16 +6,17 @@
     </div>
     <div class="section-content">
         <h1>about me</h1>
-        <div class="about-text">
-            <p>
-                I am full-stack software engineer who
-                works primarily with Node.js and React,
-                although lately I have been getting into Svelte,
-                which is what this site is build built with
-            </p>
+        <p>
+            My name is Robert, and I am full-stack software engineer who       
+        </p>
+        <p>
+            works primarily with Node.js, React, and Python.         
+        </p>
+        <div class="skills">
+            <p>Here are some of the technologies I've been working with:</p>
         </div>
     </div>
-</div>
+</section>
 
 <style>
     .about {
@@ -23,8 +24,10 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        top: 200px;
-        position: relative;   
+        min-height: 60vh;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .section-header, .section-content {
@@ -33,19 +36,27 @@
         justify-content: center;
         width: 100%;
     }
-
+    
     .section-content p {
-        font-size: 19px;
-        font-weight: 100;
-        position: relative;
-        
+        margin: 0;
+        margin-top: 30px;
+        color: var(--slate);
+        font-size: 23px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto !important;
+        max-width: 55ch;
     }
+    
 
     .section-content {
-        position: relative;
-        top: 34em;
+        margin-top: 34em !important;
         color: var(--lightest-slate);
-        max-width: 80ch;
+        max-width: 900px;
+    }
+
+    .section-content h1 {
+        margin-bottom: 35px !important;
     }
 
     .section-content h1::before {
@@ -53,9 +64,9 @@
         height: 1px;
         position: relative;
         left: -10px;
-        width: 10ch;
+        width: 30%;
         background-color: var(--slate);
-        top: 24px;
+        top: 30px;
     }
 
     .section-content h1::after {
@@ -63,29 +74,26 @@
         height: 1px;
         position: relative;
         right: -10px;
-        width: 10ch;
+        width: 30%;
         background-color: var(--slate);
-        top: 24px;
+        top: 30px;
+
     }
 
     .section-header h1 {
-        font-size: 50px;
+        font-size: 50px !important;
+        font-weight: normal !important;
     }
 
     .about h1 {
-        font-weight: 300;
+        font-weight: 400;
         
     }
 
-    .about-text {
-        display: flex;
-        justify-content: center;
+    .about p {
+        max-width: 55ch;
     }
-    
-    .about-text p {
-        max-width: 50ch;
-        margin: 0;
-    }
+
     
     .intro {
         color: var(--green);
@@ -112,7 +120,8 @@
     .about h3, .about h1 {
         display: flex;
         justify-content: center;
-        font-weight: 100;
+        font-weight: 400;
         margin: 0;
+        font-size: 40px !important;
     }
 </style>

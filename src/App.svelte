@@ -24,13 +24,19 @@
 </main>
 
 <style>
-	main {
-		min-height: 350vh;
-	}
 
 	header {
 		position: sticky;
 		top: 0;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+		position: relative;
+		top: 200px;
 	}
 
 </style>
