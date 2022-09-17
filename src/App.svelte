@@ -17,9 +17,7 @@
 	</header>
 	<div class="content">
 		<About />
-		<!-- TODO -->
-		<!-- <Projects /> -->
-		<!-- <Contact /> -->
+		<Projects />
 	</div>
 </main>
 

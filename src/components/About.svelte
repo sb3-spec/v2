@@ -1,3 +1,7 @@
+<script>
+    import Skills from "./Skills.svelte";
+
+</script>
 <section class="about" id="about">
     <div class="section-header">
         <h3 class="intro">My name is</h3>
@@ -7,14 +11,17 @@
     <div class="section-content">
         <h1>about me</h1>
         <p>
-            My name is Robert, and I am full-stack software engineer who       
+            My name is Robert and I am a full-stack 
+            software engineer who works primarily 
+            with Node.js, Express.js, React, and Python. 
+            Recently, I've been using Svelte for my client apps.
+
+            I have a solid grasp of user authentication,
+            both relational and nonrelational databases, 
+            as well as the HTTP life cycle. 
         </p>
-        <p>
-            works primarily with Node.js, React, and Python.         
-        </p>
-        <div class="skills">
-            <p>Here are some of the technologies I've been working with:</p>
-        </div>
+
+        <Skills />
     </div>
 </section>
 
@@ -38,25 +45,23 @@
     }
     
     .section-content p {
-        margin: 0;
-        margin-top: 30px;
         color: var(--slate);
-        font-size: 23px;
+        font-size: 20px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         margin: 0 auto !important;
-        max-width: 55ch;
     }
     
 
     .section-content {
-        margin-top: 34em !important;
+        margin-top: 30em !important;
         color: var(--lightest-slate);
         max-width: 900px;
     }
 
     .section-content h1 {
         margin-bottom: 35px !important;
+        font-size: 40px;
     }
 
     .section-content h1::before {
@@ -77,21 +82,17 @@
         width: 30%;
         background-color: var(--slate);
         top: 30px;
-
-    }
-
-    .section-header h1 {
-        font-size: 50px !important;
-        font-weight: normal !important;
-    }
-
-    .about h1 {
-        font-weight: 400;
         
     }
 
+    .section-header h1 {
+        font-size: 80px !important;
+        font-weight: normal !important;
+    }
+
+
     .about p {
-        max-width: 55ch;
+        max-width: 58ch;
     }
 
     
@@ -122,6 +123,7 @@
         justify-content: center;
         font-weight: 400;
         margin: 0;
-        font-size: 40px !important;
     }
+
+    
 </style>
