@@ -110,6 +110,7 @@
     .navbar h1:hover {
         color: var(--green);
         transition: color 200ms linear;
+        
     }
 
 
@@ -120,5 +121,12 @@
         color: var(--green);
         padding: .5em .8em;
         margin: 0;
+    }
+
+    .navbar button:hover {
+        color: var(--green);
+        background-color: rgba(100 255 218 / .1);
+        transition: all 200ms linear;
+        cursor: pointer;
     }
 </style>

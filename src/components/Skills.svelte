@@ -10,7 +10,7 @@
 
 <style>
     .skills {
-        margin-top: 30px !important;
+        margin-top: 30px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
