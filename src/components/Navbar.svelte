@@ -4,34 +4,73 @@
     let oldVal = 0;
 	let newVal = 0;
 
+    var isScrolling;
+    var isHovered;
+
+    function handleHover() {
+        isHovered = true;
+        scrollDir = "up";
+    };
+
+    function handleMouseLeave() {
+        isHovered = false;
+    };
+    
     window.addEventListener('scroll', (e) => {
-		newVal = -window.pageYOffset;
+        newVal = -window.pageYOffset;
+
+        window.clearTimeout(isScrolling);
+        
+        isScrolling = setTimeout(() => {
+            if (isHovered || newVal === 0) {return};
+            scrollDir = 'down';
+        }, 1000);
+
+		
+
+
         
         if (newVal === 0) {
 
-            scrollDir = 'none'
+            scrollDir = 'none';
         } else if (oldVal < newVal) {
-			scrollDir = 'up'
+			scrollDir = 'up';
 
 		} else if (oldVal > newVal) {
-			scrollDir = 'down'
+			scrollDir = 'down';
 		}
 
 		oldVal = newVal;
+
 	});
+
+    
+
+
+
+    function scrollIntoView({ target }) {
+        scrollDir = "down";
+        const el = document.querySelector(target.getAttribute('href'));
+
+        if (!el) {return;}
+        el.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
 </script>
 
 
-<nav class={`navbar ${scrollDir}`}>
+<nav class={`navbar ${scrollDir}`} on:mouseover={handleHover} on:focus={() => {console.log("were focused")}} on:mouseleave|preventDefault={handleMouseLeave}>
     <div class="logo-container">
-        <a href="#about"><img src="./images/letter-r.png" alt="logo for my portfolio" /></a>
+        <img src="./images/letter-r.png" alt="logo for my portfolio" on:click|preventDefault={() => document.body.scrollIntoView({
+            behavior: "smooth"
+        })}/>
     </div>
     <ul>
-        <li><h1>about</h1></li>
-        <li><h1>projects</h1></li>
-        <li><h1>tech</h1></li>
-        <li><h1>contact</h1></li>
-        <li><button type="button"><h1 class='resume'>Resume</h1></button></li>
+        <li><h1><a href="#about" on:click|preventDefault={scrollIntoView}>about</a></h1></li>
+        <li><h1><a href="#projects" on:click|preventDefault={scrollIntoView}>projects</a></h1></li>
+        <li><h1><a href="#contact" on:click|preventDefault={scrollIntoView}>contact</a></h1></li>
+        <li><a href="https://pdfhost.io/v/3efuM.UvL_Robert_Sheffield_Resume.PDF" target="_blank"><button type="button"><h1 class='resume'>Resume</h1></button></a></li>
     </ul>
 </nav>
 
@@ -79,6 +118,12 @@
         border: 2px solid var(--green);
     }
 
+    .logo-container img:hover {
+        cursor: pointer;
+        transform: translateY(-5%);
+        transition: all 200ms ease-in-out;
+    }
+
     .navbar ul {
         margin: 0;
         height: 100%;
@@ -90,6 +135,10 @@
         list-style: none;
         min-width: 450px;
         top: var(--navbar-content-offset)
+    }
+
+    .navbar a:hover {
+        border: none;
     }
 
     .resume {
@@ -128,5 +177,27 @@
         background-color: rgba(100 255 218 / .1);
         transition: all 200ms linear;
         cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+        .navbar h1 {
+            font-weight: 400;
+        }
+
+        .logo-container img {
+            display: none;
+        }
+
+
+        .navbar li {
+            margin: 0 5px;
+        }
+
+        .navbar ul {
+            min-width: 0;
+            width: 100%;
+            right: 0;
+            padding: 0 .5em;
+        }
     }
 </style>

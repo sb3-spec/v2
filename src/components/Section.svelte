@@ -1,11 +1,12 @@
 <script>
     export let title;
     export let id;
+    export let className = '';
 
     
 </script>
 
-<div class="section-container" id={id}>
+<div class={`section-container ${className}`} id={id}>
     <h1>{title}</h1>
     <div class="section-content">
         <slot>
@@ -22,7 +23,6 @@
         margin: 250px auto 0 auto;
         display: flex;
         flex-direction: column;
-        z-index: -1;
     }
 
     .section-container h1 {
@@ -30,6 +30,10 @@
         font-size: 40px;
         font-weight: 400;
         text-align: center;
+    }
+
+    .contact {
+        margin-top: 100px !important;
     }
 
     .section-container h1::before {
@@ -54,5 +58,18 @@
         background-color: var(--slate);
         max-width: 270px;
         display: inline-block;
+    }
+
+    @media (max-width: 900px) {
+        
+
+        .section-container {
+            min-width: 0;
+            min-height: 0;
+        }
+
+        .section-container h1 {
+            font-size: 25px;
+        }
     }
 </style>

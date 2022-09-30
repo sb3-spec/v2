@@ -1,10 +1,14 @@
 <div class="skills">
     <p>Here are some of the technologies I've been working with:</p>
     <ul>
-        <li><p>JavaScript</p><p>Svelte</p></li>
-        <li><p>Node.js</p><p>Express.js</p></li>
-        <li><p>Django Rest Framework</p><p>PostgreSQL</p></li>
-        <li><p>Auth0</p><p>Git</p></li>
+        <li><p>JavaScript</p></li>
+        <li><p>Svelte</p></li>
+        <li><p>Node</p></li>
+        <li><p>Express</p></li>
+        <li><p>Django</p></li>
+        <li><p>PostgreSQL</p></li>
+        <li><p>Auth0</p></li>
+        <li><p>Git</p></li>
     </ul>
 </div>
 
@@ -26,15 +30,30 @@
         width: 625px;
         padding: 0;
         margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        list-style-type: disc;
+        color: var(--green)
     }
 
     .skills li {
-        width: 100%;
-        display: flex;
+        max-width: 10ch;
+        display: list-item;
         font-weight: 100;
     }
 
     .skills li p {
         color: var(--lightest-slate);
+    }
+
+    @media (max-width: 900px) {
+        .skills p {
+            width: 80%;
+        }
+
+        .skills ul {
+            width: 80%;
+        }
     }
 </style>

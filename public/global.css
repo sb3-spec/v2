@@ -24,12 +24,13 @@ body {
 }
 
 a {
-	color: var(--green);
+	color: var(--lightest-slate);
 	text-decoration: none;
 }
 
 a:hover {
-	text-decoration: underline;
+	transition: color 200ms ease-in-out;
+	color: var(--green);
 }
 
 
@@ -70,3 +71,10 @@ button:not(:disabled):active {
 button:focus {
 	border-color: #666;
 }
+
+
+/* @media (max-width: 900px) {
+	p {
+		font-size: 55px !important;
+	}
+} */

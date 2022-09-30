@@ -19,7 +19,7 @@
 	<header>
 		<Navbar />
 	</header>
-	<div class="intro">
+	<div class="intro" id="intro">
 		<h3>My name is</h3>
         <h1 class="name">Robert Sheffield</h1>
         <h1 class="sub-header">I build web applications</h1>
@@ -27,6 +27,7 @@
 	<div class="content">
 		<About />
 		<Projects />
+		<Contact />
 	</div>
 </main>
 
@@ -35,16 +36,22 @@
 	header {
 		position: sticky;
 		top: 0;
+		z-index: 20;
 	}
 
 	.content {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		min-height: 100vh;
 		position: relative;
 		top: 200px;
-		z-index: -1;
+	}
+
+	.content::-webkit-scrollbar {
+  		width: 10px;
+	}
+
+	.content::-webkit-scrollbar-track {
+		background-color: var(--navy) !important;
 	}
 
 
@@ -73,4 +80,22 @@
 		font-weight: 400;
 	}
 
+	@media (max-width: 900px) {
+
+		main {
+			display: block;
+		}
+		.intro {
+
+		}
+
+		.intro h1 {
+			font-size: 45px;
+		}
+
+		.content {
+			display: block;
+			padding-bottom: 40vh;
+		}
+	}
 </style>

@@ -32,5 +32,12 @@
         margin: 0 auto;
         max-width: 58ch;
     }
+
+    @media (max-width: 900px) { 
+        .about p {
+            max-width: 80%;
+            font-size: 20px;
+        }
+    }
     
 </style>
