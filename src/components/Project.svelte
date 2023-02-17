@@ -55,7 +55,7 @@
     </div>
 
     <div class="project-image">
-        <img src={project.img[0]} alt="placeholder" />
+        <a href={`/#/image/${project.img[0]}`}><img src={project.img[0]} alt="placeholder" /></a>
     </div>    
 </div>
 
@@ -151,6 +151,7 @@
         width: 100%;
         object-fit: scale-down;
         height: 775px;
+        border-radius: 15px;
     }
 
        
