@@ -70,7 +70,7 @@
         <li><h1><a href="#about" on:click|preventDefault={scrollIntoView}>about</a></h1></li>
         <li><h1><a href="#projects" on:click|preventDefault={scrollIntoView}>projects</a></h1></li>
         <li><h1><a href="#contact" on:click|preventDefault={scrollIntoView}>contact</a></h1></li>
-        <li><a href="https://pdfhost.io/v/3efuM.UvL_Robert_Sheffield_Resume.PDF" target="_blank"><button type="button"><h1 class='resume'>Resume</h1></button></a></li>
+        <li><a href="https://pdfhost.io/v/1pQ3mMMnK_robert_sheffield_resume_2023" target="_blank"><button type="button"><h1 class='resume'>Resume</h1></button></a></li>
     </ul>
 </nav>
 

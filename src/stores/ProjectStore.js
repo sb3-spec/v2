@@ -10,11 +10,11 @@ export const ProjectStore = writable([
             "Hurdles": "The biggest issue that I faced was slow server response times. The culprit was a combination of inefficent SQL queries \
             and unnecessary calls to the server.",
             "Solutions":
-                "One of the measures I took to reduce query times was to cap the amount of data the server would send for different components.\
+                "One of the measures I took to reduce database query times was to cap the amount of data the server would send for different components.\
                 In the future, setting up a database pool connection would also reduce load times, as opening the database for every query is expensive.",
         },
         features: [
-            "Instant search/ Auto-complete through Algolia",
+            "Instant search/auto-complete through Algolia",
             "Calculate your carbon footprint and find products that would help lower your carbon footprint", 
             "Find articles and blogs that would help reduce your carbon footprint"
         ],
