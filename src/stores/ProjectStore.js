@@ -4,8 +4,11 @@ export const ProjectStore = writable([
     {
         title: 'The Carbon Platform',
         img: ["./images/portfolio-projects/carbon_platform/the_carbon_platform_1.jpg"],
-        description: "I'm the lead fullstack software engineer and am responsible for the development and maintenence of the entirity of the site. The front end is built with Svelte and leverages \
-        Algolia to provide fast search indexing. The back end is powered by a Django server and PostgreSQL database, which are hosted on Railway and AWS, respectively.",
+        description: "I'm the lead fullstack software engineer and am responsible for the \
+            development and maintenance of the entirety of the site. The front end \
+            is built with Svelte and leverages Algolia to provide fast search indexing. \
+            The back end is powered by a Django server and PostgreSQL database, which are \
+            hosted on Railway and AWS, respectively.",
         keyInfo: {
             "Hurdles": "The biggest issue that I faced was slow server response times. The culprit was a combination of inefficent SQL queries \
             and unnecessary calls to the server.",
